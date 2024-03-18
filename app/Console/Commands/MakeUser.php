@@ -43,7 +43,7 @@ class MakeUser extends Command
     {
         $email = $this->ask('What is the new user\'s email address?');
         $name = $this->ask('What ist the new user\'s name?') ?: '';
-        $password = Hash::make($this->secret('What is the new user\'s password? (blank generates a random one)', Str::random(32)));
+        $password = Hash::make($this->secret('What is the new user\'s password? (blank generates a random one)')) ?: Str::random(32);
         $generateApiKey = $this->confirm('Do you want to generate an API key for this user??');
         $sendReset = $this->confirm('Do you want to send a password reset email?');
 

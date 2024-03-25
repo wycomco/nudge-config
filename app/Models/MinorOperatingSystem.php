@@ -20,4 +20,16 @@ class MinorOperatingSystem extends Model
      * @var array
      */
     protected $guarded = [];
+
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'release_date' => 'date:Y-m-d',
+        ];
+    }
 }

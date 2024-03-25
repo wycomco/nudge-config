@@ -6,6 +6,7 @@ use App\Filament\Resources\HardwareModelResource\Pages;
 use App\Filament\Resources\HardwareModelResource\RelationManagers;
 use App\Models\HardwareModel;
 use Filament\Forms;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -27,9 +28,6 @@ class HardwareModelResource extends Resource
                     ->required()
                     ->maxLength(255)
                     ->autofocus(),
-                Forms\Components\TextInput::make('model_identifier')
-                    ->required()
-                    ->maxLength(255),
                 Forms\Components\Select::make('max_major_operating_system')
                     ->label('Maximum OS')
                     ->relationship('maxMajorOperatingSystem', 'name')
@@ -40,6 +38,18 @@ class HardwareModelResource extends Resource
                             ->required()
                             ->maxLength(255)
                     ]),
+                Repeater::make('model_identifier')
+                ->label('Model ID')
+                ->simple(
+                    Forms\Components\TextInput::make('model_identifier_data')
+                        ->required(),
+                ),
+                Repeater::make('board_identifier')
+                ->label('Board / Device ID')
+                ->simple(
+                    Forms\Components\TextInput::make('board_identifier_data')
+                        ->required(),
+                ),
             ]);
     }
 
@@ -50,13 +60,22 @@ class HardwareModelResource extends Resource
                 Tables\Columns\TextColumn::make('name')
                     ->searchable()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('model_identifier')
-                    ->searchable()
-                    ->sortable(),
                 Tables\Columns\TextColumn::make('maxMajorOperatingSystem.name')
                     ->searchable()
                     ->sortable(),
+                Tables\Columns\TextColumn::make('model_identifier')
+                    ->label('Model ID')
+                    ->listWithLineBreaks()
+                    ->searchable()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('board_identifier')
+                    ->label('Board / Device ID')
+                    ->listWithLineBreaks()
+                    ->searchable()
+                    ->sortable(),
             ])
+            ->defaultSort('name', 'asc')
+            ->persistSortInSession()
             ->filters([
                 //
             ])

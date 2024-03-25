@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug')->unique()->nullable();
-            $table->foreignId('max_major_operating_system')->references('id')->on('major_operating_systems')->nullable()->nullOnDelete();
-            $table->integer('major_update_deferral_days')->default(0);
-            $table->integer('minor_update_deferral_days')->default(0);
+            $table->foreignId('parent_configuration')->nullable()->references('id')->on('configurations')->nullOnDelete();
+            $table->foreignId('max_major_operating_system')->nullable()->references('id')->on('major_operating_systems')->nullable()->nullOnDelete();
+            $table->integer('major_update_deferral_days')->nullable()->default(null);
+            $table->integer('minor_update_deferral_days')->nullable()->default(null);
             $table->timestamps();
         });
     }

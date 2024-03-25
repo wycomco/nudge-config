@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('hardware_models', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('model_identifier');
+            $table->string('name')->unique();
+            $table->json('model_identifier')->nullable();
+            $table->json('board_identifier')->nullable();
             $table->foreignId('max_major_operating_system')->nullable()->references('id')->on('major_operating_systems')->nullOnDelete();
             $table->timestamps();
         });

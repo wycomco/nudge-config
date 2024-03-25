@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('major_operating_systems', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('major_upgrade_app_path');
-            $table->timestamps();
-            $table->softDeletes();
+        Schema::table('major_operating_systems', function (Blueprint $table) {
+            $table->string('about_update_url')->nullable()->after('name');
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('major_operating_systems');
+        Schema::table('major_operating_systems', function (Blueprint $table) {
+            $table->dropColumn('about_update_url');
+        });
     }
 };

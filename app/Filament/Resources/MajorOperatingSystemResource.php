@@ -27,6 +27,11 @@ class MajorOperatingSystemResource extends Resource
                     ->required()
                     ->maxLength(255)
                     ->autofocus(),
+                Forms\Components\TextInput::make('version')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('major_upgrade_app_path')
+                    ->required(),
             ]);
     }
 
@@ -35,6 +40,9 @@ class MajorOperatingSystemResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
+                    ->searchable()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('version')
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('minor_operating_systems_count')
@@ -48,6 +56,8 @@ class MajorOperatingSystemResource extends Resource
             ->filters([
                 //
             ])
+            ->defaultSort('name', 'desc')
+            ->persistSortInSession()
             ->actions([
                 Tables\Actions\EditAction::make(),
             ])

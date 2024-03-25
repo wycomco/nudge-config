@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('minor_operating_systems', function (Blueprint $table) {
             $table->id();
-            $table->string('version');
+            $table->string('version')->unique();
             $table->foreignId('major_operating_system_id')->references('id')->on('major_operating_systems')->cascadeOnDelete();
             $table->date('release_date');
             $table->timestamps();

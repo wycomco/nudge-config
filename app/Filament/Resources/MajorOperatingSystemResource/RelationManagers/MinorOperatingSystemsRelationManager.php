@@ -23,6 +23,10 @@ class MinorOperatingSystemsRelationManager extends RelationManager
                     ->maxLength(255),
                 Forms\Components\DatePicker::make('release_date')
                     ->required(),
+                Forms\Components\TextInput::make('about_update_url')
+                    ->required()
+                    ->activeUrl()
+                    ->maxLength(255),
             ]);
     }
 

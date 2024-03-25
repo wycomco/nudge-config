@@ -1,10 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\JsonConfigController;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/macos/config/{config:slug}/model/{model}', [JsonConfigController::class, "show"])->name('config');
 
 Route::middleware([
     'auth:sanctum',

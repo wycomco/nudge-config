@@ -14,6 +14,24 @@ class MajorOperatingSystem extends Model
         return $this->hasMany(MinorOperatingSystem::class);
     }
 
+    public function hardwareModels()
+    {
+        return $this->hasMany(HardwareModel::class);
+    }
+
+    public function configurations()
+    {
+        return $this->hasMany(Configuration::class);
+    }
+
+    public function getLatestMinorRelease(?int $deferralDays = 0): ?MinorOperatingSystem
+    {
+        return $this->minorOperatingSystems()
+            ->where('release_date', '<=', now()->subDays($deferralDays))
+            ->orderByDesc('release_date')
+            ->first();
+    }
+
     /**
      * The attributes that aren't mass assignable.
      *

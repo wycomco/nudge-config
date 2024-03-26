@@ -27,7 +27,7 @@ class ConfigurationsSeeder extends Seeder
         }
 
         Configuration::upsert([
-            ['name' => 'Generic', 'slug' => 'generic', 'nudge_config' => json_encode($convertedJson)],
+            ['name' => 'Generic', 'slug' => 'generic', 'nudge_config' => json_encode($convertedJson), 'major_update_deferral_days' => 0, 'minor_update_deferral_days' => 0, 'major_update_user_deferral_days' => 14, 'minor_update_user_deferral_days' => 7]
         ], uniqueBy: ['slug'], update: ['nudge_config']);
     }
 }

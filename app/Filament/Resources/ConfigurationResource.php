@@ -62,10 +62,22 @@ class ConfigurationResource extends Resource
                     ]),
                 TextInput::make('major_update_deferral_days')
                     ->label('Defer Major Updates')
+                    ->helperText("We will not offer major updates for this many days after they are released")
                     ->integer()
                     ->postfix('days'),
                 TextInput::make('minor_update_deferral_days')
                     ->label('Defer Minor Updates')
+                    ->helperText("We will not offer minor updates for this many days after they are released")
+                    ->integer()
+                    ->postfix('days'),
+                TextInput::make('major_update_user_deferral_days')
+                    ->label('Allow Deferral for Major Updates')
+                    ->helperText("The installation of major updates will be enforced after this many days")
+                    ->integer()
+                    ->postfix('days'),
+                TextInput::make('minor_update_user_deferral_days')
+                    ->label('Allow Deferral for Minor Updates')
+                    ->helperText("The installation of minor updates will be enforced after this many days")
                     ->integer()
                     ->postfix('days'),
                 Section::make('Advanced Settings')

@@ -65,7 +65,11 @@ class Configuration extends Model
 
         $minorRequirement['actionButtonPath'] = Config::get('nudge.minor.action_button_path');
         $minorRequirement['majorUpgradeAppPath'] = $targetVersion->majorOperatingSystem->major_upgrade_app_path;
-        $minorRequirement['requiredInstallationDate'] = $targetVersion->release_date->addDays($this->effective_minor_update_deferral_days)->format('Y-m-d\\TH:i:s\\Z');
+        $minorRequirement['requiredInstallationDate'] = $targetVersion
+            ->release_date
+            ->addDays($this->effective_minor_update_deferral_days)
+            ->addDays($this->effective_minor_update_user_deferral_days)
+            ->format('Y-m-d\\TH:i:s\\Z');
         $minorRequirement['requiredMinimumOSVersion'] = $targetVersion->version;
         $minorRequirement['targetedOSVersionsRule'] = $targetVersion->majorOperatingSystem->version;
 
@@ -86,7 +90,11 @@ class Configuration extends Model
 
         $majorRequirement['actionButtonPath'] = Config::get('nudge.major.action_button_path');
         $majorRequirement['majorUpgradeAppPath'] = $targetVersion->majorOperatingSystem->major_upgrade_app_path;
-        $majorRequirement['requiredInstallationDate'] = $targetVersion->release_date->addDays($this->effective_major_update_deferral_days)->format('Y-m-d\\TH:i:s\\Z');
+        $majorRequirement['requiredInstallationDate'] = $targetVersion
+            ->release_date
+            ->addDays($this->effective_major_update_deferral_days)
+            ->addDays($this->effective_major_update_user_deferral_days)
+            ->format('Y-m-d\\TH:i:s\\Z');
         $majorRequirement['requiredMinimumOSVersion'] = $targetVersion->version;
         $majorRequirement['targetedOSVersionsRule'] = "default";
 
@@ -185,6 +193,42 @@ class Configuration extends Model
                 }
 
                 return Configuration::find($attributes['parent_configuration'])->effective_major_update_deferral_days;
+            }
+        );
+    }
+
+    protected function effectiveMinorUpdateUserDeferralDays(): Attribute {
+        return new Attribute(
+            get: function (mixed $value, array $attributes) {
+                $deferralDays = $attributes['minor_update_user_deferral_days'];
+
+                if(!is_null($deferralDays)) {
+                    return $deferralDays;
+                }
+
+                if(is_null($attributes['parent_configuration'])) {
+                    return 0;
+                }
+
+                return Configuration::find($attributes['parent_configuration'])->effective_minor_update_user_deferral_days;
+            }
+        );
+    }
+
+    protected function effectiveMajorUpdateUserDeferralDays(): Attribute {
+        return new Attribute(
+            get: function (mixed $value, array $attributes) {
+                $deferralDays = $attributes['major_update_user_deferral_days'];
+
+                if(!is_null($deferralDays)) {
+                    return $deferralDays;
+                }
+
+                if(is_null($attributes['parent_configuration'])) {
+                    return 0;
+                }
+
+                return Configuration::find($attributes['parent_configuration'])->effective_major_update_user_deferral_days;
             }
         );
     }

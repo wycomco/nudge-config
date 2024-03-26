@@ -10,3 +10,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Added a CHANGELOG to document notable changes
+- Allow the definition of days before a new update gets enforced

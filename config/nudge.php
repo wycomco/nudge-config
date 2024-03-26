@@ -30,6 +30,6 @@ return [
     |
     */
 
-    'locales' => explode(',', env('NUDGE_LOCALES', 'en-us')),
+    'locales' => explode(',', env('NUDGE_LOCALES', 'en-us,de-de,fr-fr,es-es')),
 
 ];

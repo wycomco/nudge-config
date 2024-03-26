@@ -37,7 +37,6 @@
         "randomDelay": false
     },
     "userInterface": {
-        "actionButtonPath": "munki://detail-app_macos",
         "fallbackLanguage": "en",
         "forceFallbackLanguage": false,
         "forceScreenShotIcon": false,
@@ -64,7 +63,7 @@
                 "oneHourDeferralButtonText": "One Hour",
                 "primaryQuitButtonText": "Later",
                 "secondaryQuitButtonText": "I understand",
-                "subHeader": "A friendly reminder from your wycomco IT team"
+                "subHeader": "A friendly reminder from your IT team"
             },
             {
                 "_language": "es",
@@ -77,7 +76,7 @@
                 "mainHeader": "Tu dispositivo requiere una actualización de seguridad",
                 "primaryQuitButtonText": "Más tarde",
                 "secondaryQuitButtonText": "Entiendo",
-                "subHeader": "Un recordatorio amistoso de su equipo de IT wycomco"
+                "subHeader": "Un recordatorio amistoso de su equipo de IT"
             },
             {
                 "_language": "fr",
@@ -90,7 +89,7 @@
                 "mainHeader": "Votre appareil nécessite une mise à jour de sécurité.",
                 "primaryQuitButtonText": "Plus tard",
                 "secondaryQuitButtonText": "Je comprends",
-                "subHeader": "Un rappel amical de votre équipe informatique wycomco"
+                "subHeader": "Un rappel amical de votre équipe informatique"
             },
             {
                 "_language": "de",
@@ -103,7 +102,7 @@
                 "mainHeader": "Ihr Gerät benötigt ein Sicherheitsupdate",
                 "primaryQuitButtonText": "Später",
                 "secondaryQuitButtonText": "Ich verstehe",
-                "subHeader": "Eine freundliche Erinnerung von Ihrem wycomco-IT-Team"
+                "subHeader": "Eine freundliche Erinnerung von Ihrem IT-Team"
             }
         ]
     }

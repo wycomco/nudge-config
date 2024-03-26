@@ -3,9 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JsonConfigController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/', '/admin');
+Route::redirect('/dashboard', '/admin');
+Route::redirect('/login', '/admin');
 
 Route::get('/macos/config/{config:slug}/model/{model}', [JsonConfigController::class, "show"])->name('config');
 

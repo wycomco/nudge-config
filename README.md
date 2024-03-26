@@ -1,66 +1,117 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Nudge Config
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Overview
 
-## About Laravel
+This is a small web application for managing [Nudge](https://github.com/macadmins/nudge) configurations for multiple environments.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Manage multiple Nudge configurations:
+  - Adjusting all of [Nudge's preferences](https://github.com/macadmins/nudge/wiki/Preferences)
+  - Defining a maximum OS version
+  - Define deferral dates to ignore specific updates for a given time
+  - Inherit settings from other configurations
+- Define major and minor macOS versions:
+  - Set a custom release date for each update
+  - Set an [about update url](https://github.com/macadmins/nudge/wiki/aboutUpdateURLs) for each update, falling back to a given default
+  - Automatically create localized urls for all configured locales
+- Manage hardware models to define a maximum OS version for each of them
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Installation
 
-## Learning Laravel
+Since Nudge Config is based on [Laravel](https://laravel.com) and [Filament](https://filamentphp.com) you find the corresponding information on how to deploy this app in the [Laravel Docs](https://laravel.com/docs/11.x/deployment).
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+You may seed the database with senseful default values, especially an initial configuration, macOS definitions and hardware models using the Artisan command `db:seed`:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+```shell
+php aritsan db:seed
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+To create a first user account you may use the interactive Artisan command `make:user`:
 
-## Laravel Sponsors
+```shell
+php artisan make:user
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+**Important**: When deploying in a local testing environment, please be aware that the database seeder will automatically create a first admin account with a `admin@hostname` as user name and a default password `admin`.
 
-### Premium Partners
+## Configuration
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Beside the common options for a Laravel application there are some app specific configuration you may adjust by defining them in your `.env` file:
+
+```env
+# The locales for Nudge's UI elements and the automatically generated About Update URLs
+NUDGE_LOCALES="en-us,de-de,fr-fr,es-es"
+
+# URL for installing major macOS releases, look for actionButtonPath in Nudge wiki: https://github.com/macadmins/nudge/wiki/osVersionRequirements#actionbuttonpath---type-string-default-value-nil
+NUDGE_MAJOR_ACTION_PATH="munki://detail-app_macos"
+
+# URL for installing minor macOS releases, look for actionButtonPath in Nudge wiki: https://github.com/macadmins/nudge/wiki/osVersionRequirements#actionbuttonpath---type-string-default-value-nil
+NUDGE_MINOR_ACTION_PATH="/System/Library/CoreServices/Software Update.app"
+
+# URL to be used if no AboutUpdateUrl is given for a major macOS update
+NUDGE_MAJOR_UPDATE_URL="https://www.apple.com/macos/"
+
+# URL to be used if no AboutUpdateUrl is given for a minor macOS update
+NUDGE_MINOR_UPDATE_URL="https://support.apple.com/en-us/HT201222"
+```
+
+Please make sure to rebuild the [config cache](https://laravel.com/docs/11.x/configuration#configuration-caching) after adjusting these settings:
+
+```shell
+php artisan config:clear
+```
+
+## Usage
+
+This application is able to dynamically generate a hardware specific JSON file which may be used by Nudge. To use this file Nudge needs to be invoked using the `-json-url` argument, as described in the [Nudge Wiki](https://github.com/macadmins/nudge/wiki/Command-Line-Arguments#json-url--json-url), so please adjust your [LaunchAgent](https://github.com/macadmins/nudge/wiki/Getting-Started#launchagent) accordingly. It may look like this example:
+
+```plist
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AssociatedBundleIdentifiers</key>
+	<array>
+		<string>com.github.macadmins.Nudge</string>
+	</array>
+	<key>Label</key>
+	<string>com.github.macadmins.Nudge</string>
+	<key>LimitLoadToSessionType</key>
+	<array>
+		<string>Aqua</string>
+	</array>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Applications/Utilities/Nudge.app/Contents/MacOS/Nudge</string>
+		<string>-json-url</string>
+		<string>https://nudge-config.test/macos/config/generic/model/`sysctl hw.model | awk '{ print \$2 }'`</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StartCalendarInterval</key>
+	<array>
+		<dict>
+			<key>Minute</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>Minute</key>
+			<integer>30</integer>
+		</dict>
+	</array>
+</dict>
+</plist>
+```
+
+The configuration specific JSON url may be copied using the `Copy URL` button in the Configurations table. To review the generated config for your own machine, just run the following command in your Terminal app, replacing the URL with the copied configuration URL:
+
+```shell
+curl https://nudge-config.test/macos/config/generic/model/`sysctl hw.model | awk '{ print \$2 }'` > ~/Desktop/nudge-config-test.json
+```
+
+This will generate a new file `nudge-config-test.json` on your Desktop, which may be viewed with your prefered text editor or, for example, [Mozilla Firefox](https://www.mozilla.org/firefox/).
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Pull requests are welcome!

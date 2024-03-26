@@ -24,7 +24,7 @@ class JsonConfigController extends Controller
         return response()->json(
             data: $nudgeConfig,
             headers: ['Content-Type' => 'application/json;charset=UTF-8', 'Charset' => 'utf-8'],
-            options: JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES
+            options: JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT
         );
     }
 }

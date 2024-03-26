@@ -1,7 +1,7 @@
 {
     "name": "wycomco/nudge-config",
     "type": "project",
-    "description": "Managing Nudge configurations for multiple environments",
+    "description": "Web app for managing Nudge configurations for multiple environments",
     "keywords": ["macos", "macadmins", "nudge", "configuration", "client-management"],
     "license": "MIT",
     "require": {

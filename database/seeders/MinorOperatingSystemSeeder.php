@@ -57,6 +57,7 @@ class MinorOperatingSystemSeeder extends Seeder
                 ['major_operating_system_id' => $major_id, 'version' => '13.6.1', 'release_date' => '2023-10-25', 'about_update_url' => ''],
                 ['major_operating_system_id' => $major_id, 'version' => '13.6.2', 'release_date' => '2023-11-07', 'about_update_url' => ''],
                 ['major_operating_system_id' => $major_id, 'version' => '13.6.5', 'release_date' => '2024-03-14', 'about_update_url' => ''],
+                ['major_operating_system_id' => $major_id, 'version' => '13.6.6', 'release_date' => '2024-03-25', 'about_update_url' => 'https://support.apple.com/en-us/HT214095'],
             ],
             ['version'],
             ['release_date', 'major_operating_system_id', 'about_update_url']
@@ -75,6 +76,7 @@ class MinorOperatingSystemSeeder extends Seeder
                 ['major_operating_system_id' => $major_id, 'version' => '14.3', 'release_date' => '2024-01-22', 'about_update_url' => ''],
                 ['major_operating_system_id' => $major_id, 'version' => '14.3.1', 'release_date' => '2024-02-08', 'about_update_url' => ''],
                 ['major_operating_system_id' => $major_id, 'version' => '14.4', 'release_date' => '2024-03-07', 'about_update_url' => ''],
+                ['major_operating_system_id' => $major_id, 'version' => '14.4.1', 'release_date' => '2024-03-25', 'about_update_url' => 'https://support.apple.com/en-us/HT214096'],
             ],
             ['version'],
             ['release_date', 'major_operating_system_id', 'about_update_url']

@@ -24,7 +24,7 @@ Since Nudge Config is based on [Laravel](https://laravel.com) and [Filament](htt
 You may seed the database with senseful default values, especially an initial configuration, macOS definitions and hardware models using the Artisan command `db:seed`:
 
 ```shell
-php aritsan db:seed
+php artisan db:seed
 ```
 
 To create a first user account you may use the interactive Artisan command `make:user`:
@@ -66,7 +66,7 @@ php artisan config:clear
 
 This application is able to dynamically generate a hardware specific JSON file which may be used by Nudge. To use this file Nudge needs to be invoked using the `-json-url` argument, as described in the [Nudge Wiki](https://github.com/macadmins/nudge/wiki/Command-Line-Arguments#json-url--json-url), so please adjust your [LaunchAgent](https://github.com/macadmins/nudge/wiki/Getting-Started#launchagent) accordingly. It may look like this example:
 
-```plist
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">

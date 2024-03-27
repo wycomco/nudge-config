@@ -51,6 +51,7 @@ class MajorOperatingSystemResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('minor_operating_systems_max_release_date')->max('minorOperatingSystems', 'release_date')
                     ->label('Latest release')
+                    ->date("Y-m-d")
                     ->sortable(),
             ])
             ->filters([

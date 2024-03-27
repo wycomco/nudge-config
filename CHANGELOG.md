@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Adjusted the displayed meta data for minor operating system versions
 - Set the alignment of icon columns to center
+- Explicitly set a date format (Y-m-d) for the release dates
 
 ## [0.1.1] - 2024-03-27
 

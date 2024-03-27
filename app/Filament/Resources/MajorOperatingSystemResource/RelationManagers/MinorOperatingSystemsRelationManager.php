@@ -41,6 +41,7 @@ class MinorOperatingSystemsRelationManager extends RelationManager
                     ->sortable(),
                 Tables\Columns\TextColumn::make('release_date')
                     ->searchable()
+                    ->date("Y-m-d")
                     ->sortable(),
                 Tables\Columns\IconColumn::make('about_update_url')
                     ->icon('heroicon-o-globe-alt')

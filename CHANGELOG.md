@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added previously missing 13.6.3 and 13.6.4 to database seeder
+
 ## [0.1.0] - 2024-03-26
 
 ### Added

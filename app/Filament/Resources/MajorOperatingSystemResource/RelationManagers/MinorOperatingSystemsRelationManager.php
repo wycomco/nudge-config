@@ -5,6 +5,7 @@ namespace App\Filament\Resources\MajorOperatingSystemResource\RelationManagers;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\RelationManagers\RelationManager;
+use Filament\Support\Enums\Alignment;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -41,6 +42,12 @@ class MinorOperatingSystemsRelationManager extends RelationManager
                 Tables\Columns\TextColumn::make('release_date')
                     ->searchable()
                     ->sortable(),
+                Tables\Columns\IconColumn::make('about_update_url')
+                    ->icon('heroicon-o-globe-alt')
+                    ->alignment(Alignment::Center)
+                    ->color('info')
+                    ->url(fn ($record) => $record->about_update_url)
+                    ->openUrlInNewTab(),
             ])
             ->filters([
                 //

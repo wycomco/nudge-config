@@ -17,6 +17,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Set the alignment of icon columns to center
 - Explicitly set a date format (Y-m-d) for the release dates
 
+### Fixed
+
+- Prevent null values for acceptableApplicationBundleIDs and blockedApplicationBundleIDs, what has led to an error in Nudge
+- Set correct attribute name for blockedApplicationBundleIDs
+
 ## [0.1.1] - 2024-03-27
 
 ### Added

@@ -18,6 +18,7 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Section;
+use Filament\Support\Enums\Alignment;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Arr;
@@ -116,14 +117,16 @@ class ConfigurationResource extends Resource
                                                     ->label('Acceptable Application Bundle ID')
                                                     ->maxLength(255),
                                             )
+                                            ->defaultItems(0)
                                             ->addActionLabel('Add App Bundle ID'),
-                                        Repeater::make('blocked_application_bundle_ids')
+                                        Repeater::make('blockedApplicationBundleIDs')
                                             ->label('Blocked Application Bundle IDs')
                                             ->simple(
-                                                TextInput::make('blockedApplicationBundleIDs')
+                                                TextInput::make('blocked_application_bundle_id')
                                                     ->label('Blocked Application Bundle ID')
                                                     ->maxLength(255),
                                             )
+                                            ->defaultItems(0)
                                             ->addActionLabel('Add App Bundle ID'),
                                         
                                     ])
@@ -330,11 +333,13 @@ class ConfigurationResource extends Resource
                     ->sortable(),
                 Tables\Columns\IconColumn::make('parent_configuration_exists')->exists('parentConfiguration')
                     ->label('has Parent Config')
+                    ->alignment(Alignment::Center)
                     ->boolean()
                     ->trueColor('info')
                     ->falseColor('gray'),
                 Tables\Columns\IconColumn::make('has_nudge_config')
                     ->label('Nudge Configuration')
+                    ->alignment(Alignment::Center)
                     ->boolean()
                     ->trueColor('info')
                     ->falseColor('gray'),

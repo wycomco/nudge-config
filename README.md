@@ -35,6 +35,14 @@ php artisan make:user
 
 **Important**: When deploying in a local testing environment, please be aware that the database seeder will automatically create a first admin account with a `admin@hostname` as user name and a default password `admin`.
 
+## Updating
+
+We are trying to keep the provided data for operating systems and hardware models up to date. So if you update the application you may want to use the provided seeders to update these database tables in your deployment:
+
+```shell
+php artisan db:seed UpdateSeeder --force
+```
+
 ## Configuration
 
 Beside the common options for a Laravel application there are some app specific configuration you may adjust by defining them in your `.env` file:
@@ -71,35 +79,35 @@ This application is able to dynamically generate a hardware specific JSON file w
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>AssociatedBundleIdentifiers</key>
-	<array>
-		<string>com.github.macadmins.Nudge</string>
-	</array>
-	<key>Label</key>
-	<string>com.github.macadmins.Nudge</string>
-	<key>LimitLoadToSessionType</key>
-	<array>
-		<string>Aqua</string>
-	</array>
-	<key>ProgramArguments</key>
-	<array>
-		<string>/Applications/Utilities/Nudge.app/Contents/MacOS/Nudge</string>
-		<string>-json-url</string>
-		<string>https://nudge-config.test/macos/config/generic/model/`sysctl hw.model | awk '{ print \$2 }'`</string>
-	</array>
-	<key>RunAtLoad</key>
-	<true/>
-	<key>StartCalendarInterval</key>
-	<array>
-		<dict>
-			<key>Minute</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>Minute</key>
-			<integer>30</integer>
-		</dict>
-	</array>
+    <key>AssociatedBundleIdentifiers</key>
+    <array>
+        <string>com.github.macadmins.Nudge</string>
+    </array>
+    <key>Label</key>
+    <string>com.github.macadmins.Nudge</string>
+    <key>LimitLoadToSessionType</key>
+    <array>
+        <string>Aqua</string>
+    </array>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Applications/Utilities/Nudge.app/Contents/MacOS/Nudge</string>
+        <string>-json-url</string>
+        <string>https://nudge-config.test/macos/config/generic/model/`sysctl hw.model | awk '{ print \$2 }'`</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>StartCalendarInterval</key>
+    <array>
+        <dict>
+            <key>Minute</key>
+            <integer>0</integer>
+        </dict>
+        <dict>
+            <key>Minute</key>
+            <integer>30</integer>
+        </dict>
+    </array>
 </dict>
 </plist>
 ```

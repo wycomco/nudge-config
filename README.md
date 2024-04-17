@@ -4,7 +4,7 @@
 
 This is a small web application for managing [Nudge](https://github.com/macadmins/nudge) configurations for multiple environments.
 
-## Alright. But why?
+### Alright. But why?
 
 Assuming you are managing your Nudge config with your MDM of choice. If this MDM does not support the [Jamf JSON scheme](https://github.com/macadmins/nudge/wiki/Jamf-Pro-Guide#configuration-profile) you will need to build the mobileconfig files by hand or utilize tools like [iMazing Profile Editor](https://imazing.com/profile-editor). Now imagine the following scenarios:
 
@@ -16,19 +16,11 @@ Assuming you are managing your Nudge config with your MDM of choice. If this MDM
   - You need to check the compatibility of your managed devices
   - You need to make sure that Nudge does not offer this major update to incompatible devices
 
-And now imagine you have to do this not for a single environment, but for a few dozens. And some of those environments have good reasons to stick to a specific macOS version for a bit longer than you would usually recommend. This leads to a significant effort in actively managing all those Nudge configs.
+And now imagine you have to do this not for a *single* environment, but for a *few dozens*. And some of those environments have good reasons to stick to a specific macOS version for a bit longer than you would usually recommend. This leads to a significant effort in actively managing all those Nudge configs. 🤯
 
 With this web application this whole process may be a set and forget.
 
-## Screenshots
-
-![Configurations](resources/images/screenshots/02_00_Configurations.png?raw=true "Configurations")
-![Configurations Settings](resources/images/screenshots/02_10_Edit_Configuration.png?raw=true "Configuration Settings")
-![Nudge Options](resources/images/screenshots/02_20_Edit_Configuration_Nudge-Options.png?raw=true "Nudge Options")
-![Nudge Options: Optional Features](resources/images/screenshots/02_25_Edit_Configuration_Nudge-Options.png?raw=true "Nudge Options: Optional Features")
-![Nudge Options: Update Elements](resources/images/screenshots/02_27_Edit_Configuration_Nudge-Options.png?raw=true "Nudge Options: Update Elements")
-
-## Features
+### Features
 
 - Manage multiple Nudge configurations:
   - Adjusting all of [Nudge's preferences](https://github.com/macadmins/nudge/wiki/Preferences)
@@ -40,6 +32,15 @@ With this web application this whole process may be a set and forget.
   - Set an [about update url](https://github.com/macadmins/nudge/wiki/aboutUpdateURLs) for each update, falling back to a given default
   - Automatically create localized urls for all configured locales
 - Manage hardware models to define a maximum OS version for each of them
+
+### Screenshots
+
+![Configurations](resources/images/screenshots/02_00_Configurations.png?raw=true "Configurations")
+![Configurations Settings](resources/images/screenshots/02_10_Edit_Configuration.png?raw=true "Configuration Settings")
+![Nudge Options: Optional Features](resources/images/screenshots/02_25_Edit_Configuration_Nudge-Options.png?raw=true "Nudge Options: Optional Features")
+![Search Hardware Models](resources/images/screenshots/03_01_Search_Hardware-Models.png?raw=true "Search Hardware Models")
+![Edit Major OS](resources/images/screenshots/04_10_Edit_Major-OS.png?raw=true "Edit Major OS")
+![Dark Mode](resources/images/screenshots/05_Dark-Mode.png?raw=true "Dark Mode Support")
 
 ## Installation
 

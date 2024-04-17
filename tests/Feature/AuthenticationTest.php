@@ -3,15 +3,17 @@
 use App\Models\User;
 
 test('login screen can be rendered', function () {
-    $response = $this->get('/login');
+    $response = $this->get('/admin/login');
 
+    $this->get('/posts/create')
+    ->assertSeeLivewire(CreatePost::class);
     $response->assertStatus(200);
 });
 
 test('users can authenticate using the login screen', function () {
     $user = User::factory()->create();
 
-    $response = $this->post('/login', [
+    $response = $this->post('/admin/login', [
         'email' => $user->email,
         'password' => 'password',
     ]);

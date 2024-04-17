@@ -35,6 +35,8 @@ With this web application this whole process may be a set and forget.
 
 ### Screenshots
 
+These are some screenshots to get an idea of the interface:
+
 ![Configurations](resources/images/screenshots/02_00_Configurations.png?raw=true "Configurations")
 ![Configurations Settings](resources/images/screenshots/02_10_Edit_Configuration.png?raw=true "Configuration Settings")
 ![Nudge Options: Optional Features](resources/images/screenshots/02_25_Edit_Configuration_Nudge-Options.png?raw=true "Nudge Options: Optional Features")

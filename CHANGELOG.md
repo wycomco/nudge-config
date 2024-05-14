@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## Added
+
+- Added update info for macOS 14.5, 13.6.7, and 12.7.5
+
 ## Changed
 
 - Updated dependecies

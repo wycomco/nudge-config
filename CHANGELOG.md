@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Fixed max OS for MacBook (Retina, 12-inch, 2017)
+
 ## [0.3.1] - 2024-05-14
 
 ## Added

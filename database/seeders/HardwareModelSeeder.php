@@ -48,7 +48,7 @@ class HardwareModelSeeder extends Seeder
             ['name' => 'iMac (24-inch, 2023)', 'model_identifier' => '["Mac15,4", "Mac15,5"]', 'board_identifier' => '["J433AP", "J434AP"]', 'max_major_operating_system' => NULL],
             ['name' => 'MacBook (Retina, 12-inch, Early 2015)', 'model_identifier' => '["MacBook8,1"]', 'board_identifier' => '["Mac-BE0E8AC46FE800CC"]', 'max_major_operating_system' => $major_versions['11']],
             ['name' => 'MacBook (Retina, 12-inch, Early 2016)', 'model_identifier' => '["MacBook9,1"]', 'board_identifier' => '["Mac-9AE82516C7C6B903"]', 'max_major_operating_system' => $major_versions['12']],
-            ['name' => 'MacBook (Retina, 12-inch, 2017)', 'model_identifier' => '["MacBook10,1"]', 'board_identifier' => '["Mac-EE2EBD4B90B839A8"]', 'max_major_operating_system' => NULL],
+            ['name' => 'MacBook (Retina, 12-inch, 2017)', 'model_identifier' => '["MacBook10,1"]', 'board_identifier' => '["Mac-EE2EBD4B90B839A8"]', 'max_major_operating_system' => $major_versions['13']],
             ['name' => 'MacBook Air (11-inch, Mid 2012)', 'model_identifier' => '["MacBookAir5,1"]', 'board_identifier' => '["Mac-66F35F19FE2A0D05"]', 'max_major_operating_system' => $major_versions['11']],
             ['name' => 'MacBook Air (13-inch, Mid 2012)', 'model_identifier' => '["MacBookAir5,2"]', 'board_identifier' => '["Mac-2E6FAB96566FE58C"]', 'max_major_operating_system' => $major_versions['11']],
             ['name' => 'MacBook Air (11-inch, Mid 2013)', 'model_identifier' => '["MacBookAir6,1"]', 'board_identifier' => '["Mac-35C1E88140C3E6CF"]', 'max_major_operating_system' => $major_versions['11']],

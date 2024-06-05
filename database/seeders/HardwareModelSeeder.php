@@ -63,7 +63,7 @@ class HardwareModelSeeder extends Seeder
             ['name' => 'MacBook Air (Retina, 13-inch, 2020)', 'model_identifier' => '["MacBookAir9,1"]', 'board_identifier' => '["Mac-0CFF9C7C2B63DF8D"]', 'max_major_operating_system' => NULL],
             ['name' => 'MacBook Air (M1, 2020)', 'model_identifier' => '["MacBookAir10,1"]', 'board_identifier' => '["J313AP"]', 'max_major_operating_system' => NULL],
             ['name' => 'MacBook Air (M2, 2022)', 'model_identifier' => '["Mac14,2"]', 'board_identifier' => '["J413AP"]', 'max_major_operating_system' => NULL],
-            ['name' => 'MacBook Air (15-inch, M2, 2023)', 'model_identifier' => '["Mac14,5"]', 'board_identifier' => '["J414cAP"]', 'max_major_operating_system' => NULL],
+            ['name' => 'MacBook Air (15-inch, M2, 2023)', 'model_identifier' => '["Mac14,5", "Mac14,15"]', 'board_identifier' => '["J414cAP", "J415AP"]', 'max_major_operating_system' => NULL],
             ['name' => 'MacBook Air (13-inch, M3, 2024)', 'model_identifier' => '["Mac15,12"]', 'board_identifier' => '["J613AP"]', 'max_major_operating_system' => NULL],
             ['name' => 'MacBook Air (15-inch, M3, 2024)', 'model_identifier' => '["Mac15,13"]', 'board_identifier' => '["J615AP"]', 'max_major_operating_system' => NULL],
             ['name' => 'MacBook Pro (Retina, 13-inch, Late 2013)', 'model_identifier' => '["MacBookPro11,1"]', 'board_identifier' => '["Mac-189A3D4F975D5FFC"]', 'max_major_operating_system' => $major_versions['11']],

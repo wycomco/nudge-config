@@ -31,6 +31,7 @@ class MinorOperatingSystemSeeder extends Seeder
                 ['major_operating_system_id' => $major_id, 'version' => '12.7.3', 'release_date' => '2024-01-22', 'about_update_url' => ''],
                 ['major_operating_system_id' => $major_id, 'version' => '12.7.4', 'release_date' => '2024-03-07', 'about_update_url' => ''],
                 ['major_operating_system_id' => $major_id, 'version' => '12.7.5', 'release_date' => '2024-05-13', 'about_update_url' => 'https://support.apple.com/en-us/HT214105'],
+                ['major_operating_system_id' => $major_id, 'version' => '12.7.6', 'release_date' => '2024-07-29', 'about_update_url' => 'https://support.apple.com/en-us/120910'],
             ],
             ['version'],
             ['release_date', 'major_operating_system_id', 'about_update_url']
@@ -62,6 +63,15 @@ class MinorOperatingSystemSeeder extends Seeder
                 ['major_operating_system_id' => $major_id, 'version' => '13.6.5', 'release_date' => '2024-03-14', 'about_update_url' => 'https://support.apple.com/en-us/HT214085'],
                 ['major_operating_system_id' => $major_id, 'version' => '13.6.6', 'release_date' => '2024-03-25', 'about_update_url' => 'https://support.apple.com/en-us/HT214095'],
                 ['major_operating_system_id' => $major_id, 'version' => '13.6.7', 'release_date' => '2024-05-13', 'about_update_url' => 'https://support.apple.com/en-us/HT214107'],
+                ['major_operating_system_id' => $major_id, 'version' => '13.6.8', 'release_date' => '2024-07-29', 'about_update_url' => 'https://support.apple.com/en-us/120912'],
+                ['major_operating_system_id' => $major_id, 'version' => '13.6.9', 'release_date' => '2024-08-07', 'about_update_url' => ''],
+                ['major_operating_system_id' => $major_id, 'version' => '13.7', 'release_date' => '2024-09-16', 'about_update_url' => 'https://support.apple.com/en-us/121234'],
+                ['major_operating_system_id' => $major_id, 'version' => '13.7.1', 'release_date' => '2024-10-28', 'about_update_url' => 'https://support.apple.com/en-us/121234'],
+                ['major_operating_system_id' => $major_id, 'version' => '13.7.2', 'release_date' => '2024-12-11', 'about_update_url' => 'https://support.apple.com/en-us/121842'],
+                ['major_operating_system_id' => $major_id, 'version' => '13.7.3', 'release_date' => '2025-01-27', 'about_update_url' => 'https://support.apple.com/en-us/122070'],
+                ['major_operating_system_id' => $major_id, 'version' => '13.7.4', 'release_date' => '2025-02-10', 'about_update_url' => 'https://support.apple.com/en-us/122902'],
+                ['major_operating_system_id' => $major_id, 'version' => '13.7.5', 'release_date' => '2025-03-31', 'about_update_url' => 'https://support.apple.com/en-us/122375'],
+                ['major_operating_system_id' => $major_id, 'version' => '13.7.6', 'release_date' => '2025-05-12', 'about_update_url' => 'https://support.apple.com/en-us/122718'],
             ],
             ['version'],
             ['release_date', 'major_operating_system_id', 'about_update_url']
@@ -82,6 +92,35 @@ class MinorOperatingSystemSeeder extends Seeder
                 ['major_operating_system_id' => $major_id, 'version' => '14.4', 'release_date' => '2024-03-07', 'about_update_url' => ''],
                 ['major_operating_system_id' => $major_id, 'version' => '14.4.1', 'release_date' => '2024-03-25', 'about_update_url' => 'https://support.apple.com/en-us/HT214096'],
                 ['major_operating_system_id' => $major_id, 'version' => '14.5', 'release_date' => '2024-05-13', 'about_update_url' => 'https://support.apple.com/en-us/HT214106'],
+                ['major_operating_system_id' => $major_id, 'version' => '14.6', 'release_date' => '2024-07-29', 'about_update_url' => 'https://support.apple.com/en-us/120911'],
+                ['major_operating_system_id' => $major_id, 'version' => '14.6.1', 'release_date' => '2024-08-07', 'about_update_url' => ''],
+                ['major_operating_system_id' => $major_id, 'version' => '14.7', 'release_date' => '2024-09-16', 'about_update_url' => 'https://support.apple.com/en-us/121247'],
+                ['major_operating_system_id' => $major_id, 'version' => '14.7.1', 'release_date' => '2024-10-28', 'about_update_url' => 'https://support.apple.com/en-us/121570'],
+                ['major_operating_system_id' => $major_id, 'version' => '14.7.2', 'release_date' => '2024-12-11', 'about_update_url' => 'https://support.apple.com/en-us/121840'],
+                ['major_operating_system_id' => $major_id, 'version' => '14.7.3', 'release_date' => '2025-01-27', 'about_update_url' => 'https://support.apple.com/en-us/122069'],
+                ['major_operating_system_id' => $major_id, 'version' => '14.7.4', 'release_date' => '2025-02-10', 'about_update_url' => 'https://support.apple.com/en-us/122901'],
+                ['major_operating_system_id' => $major_id, 'version' => '14.7.5', 'release_date' => '2025-03-31', 'about_update_url' => 'https://support.apple.com/en-us/122374'],
+                ['major_operating_system_id' => $major_id, 'version' => '14.7.6', 'release_date' => '2025-05-12', 'about_update_url' => 'https://support.apple.com/en-us/122717'],
+            ],
+            ['version'],
+            ['release_date', 'major_operating_system_id', 'about_update_url']
+        );
+
+        $major_id = DB::table('major_operating_systems')->where('version', '15')->value('id');
+
+        DB::table('minor_operating_systems')->upsert(
+            [
+                ['major_operating_system_id' => $major_id, 'version' => '15.0', 'release_date' => '2024-09-16', 'about_update_url' => ''],
+                ['major_operating_system_id' => $major_id, 'version' => '15.0.1', 'release_date' => '2024-10-03', 'about_update_url' => ''],
+                ['major_operating_system_id' => $major_id, 'version' => '15.1', 'release_date' => '2024-10-28', 'about_update_url' => 'https://support.apple.com/en-us/121564'],
+                ['major_operating_system_id' => $major_id, 'version' => '15.1.1', 'release_date' => '2024-11-19', 'about_update_url' => 'https://support.apple.com/en-us/121753'],
+                ['major_operating_system_id' => $major_id, 'version' => '15.2', 'release_date' => '2024-12-11', 'about_update_url' => 'https://support.apple.com/en-us/121839'],
+                ['major_operating_system_id' => $major_id, 'version' => '15.3', 'release_date' => '2025-01-27', 'about_update_url' => 'https://support.apple.com/en-us/122068'],
+                ['major_operating_system_id' => $major_id, 'version' => '15.3.1', 'release_date' => '2025-02-10', 'about_update_url' => 'https://support.apple.com/en-us/122900'],
+                ['major_operating_system_id' => $major_id, 'version' => '15.3.2', 'release_date' => '2025-03-11', 'about_update_url' => 'https://support.apple.com/en-us/122283'],
+                ['major_operating_system_id' => $major_id, 'version' => '15.4', 'release_date' => '2025-03-31', 'about_update_url' => 'https://support.apple.com/en-us/122373'],
+                ['major_operating_system_id' => $major_id, 'version' => '15.4.1', 'release_date' => '2025-04-16', 'about_update_url' => 'https://support.apple.com/en-us/122400'],
+                ['major_operating_system_id' => $major_id, 'version' => '15.5', 'release_date' => '2025-05-12', 'about_update_url' => 'https://support.apple.com/en-us/122716'],
             ],
             ['version'],
             ['release_date', 'major_operating_system_id', 'about_update_url']

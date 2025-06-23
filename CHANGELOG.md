@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.2] - 2025-06-23
+
+## Added
+
+- Added major version 15
+- Added update info for recent macOS minor versions 15, 14 and 13
+- Added new devices
+
+## Changed
+
+- Major versions for devices not capable of macOS 26
+
+
+### Fixed
+
+- Fixed max OS for MacBook (Retina, 12-inch, 2017)
+
 ## [0.3.1] - 2024-05-14
 
 ## Added

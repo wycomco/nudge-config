@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.3] - 2025-09-05
+
+### Fixed
+
+- Fixed max OS for MacBook Air (Retina, 13-inch, 2018) and MacBook Air (Retina, 13-inch, 2019)
+
 ## [0.3.2] - 2025-06-23
 
 ## Added
@@ -18,7 +24,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Changed
 
 - Major versions for devices not capable of macOS 26
-
 
 ### Fixed
 

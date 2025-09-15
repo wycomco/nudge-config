@@ -72,6 +72,8 @@ class MinorOperatingSystemSeeder extends Seeder
                 ['major_operating_system_id' => $major_id, 'version' => '13.7.4', 'release_date' => '2025-02-10', 'about_update_url' => 'https://support.apple.com/en-us/122902'],
                 ['major_operating_system_id' => $major_id, 'version' => '13.7.5', 'release_date' => '2025-03-31', 'about_update_url' => 'https://support.apple.com/en-us/122375'],
                 ['major_operating_system_id' => $major_id, 'version' => '13.7.6', 'release_date' => '2025-05-12', 'about_update_url' => 'https://support.apple.com/en-us/122718'],
+                ['major_operating_system_id' => $major_id, 'version' => '13.7.7', 'release_date' => '2025-07-29', 'about_update_url' => 'https://support.apple.com/en-us/124151'],
+                ['major_operating_system_id' => $major_id, 'version' => '13.7.8', 'release_date' => '2025-08-20', 'about_update_url' => 'https://support.apple.com/en-us/124929'],
             ],
             ['version'],
             ['release_date', 'major_operating_system_id', 'about_update_url']
@@ -101,6 +103,8 @@ class MinorOperatingSystemSeeder extends Seeder
                 ['major_operating_system_id' => $major_id, 'version' => '14.7.4', 'release_date' => '2025-02-10', 'about_update_url' => 'https://support.apple.com/en-us/122901'],
                 ['major_operating_system_id' => $major_id, 'version' => '14.7.5', 'release_date' => '2025-03-31', 'about_update_url' => 'https://support.apple.com/en-us/122374'],
                 ['major_operating_system_id' => $major_id, 'version' => '14.7.6', 'release_date' => '2025-05-12', 'about_update_url' => 'https://support.apple.com/en-us/122717'],
+                ['major_operating_system_id' => $major_id, 'version' => '14.7.7', 'release_date' => '2025-07-29', 'about_update_url' => 'https://support.apple.com/en-us/124150'],
+                ['major_operating_system_id' => $major_id, 'version' => '14.7.8', 'release_date' => '2025-08-20', 'about_update_url' => 'https://support.apple.com/en-us/124928'],
             ],
             ['version'],
             ['release_date', 'major_operating_system_id', 'about_update_url']
@@ -121,6 +125,8 @@ class MinorOperatingSystemSeeder extends Seeder
                 ['major_operating_system_id' => $major_id, 'version' => '15.4', 'release_date' => '2025-03-31', 'about_update_url' => 'https://support.apple.com/en-us/122373'],
                 ['major_operating_system_id' => $major_id, 'version' => '15.4.1', 'release_date' => '2025-04-16', 'about_update_url' => 'https://support.apple.com/en-us/122400'],
                 ['major_operating_system_id' => $major_id, 'version' => '15.5', 'release_date' => '2025-05-12', 'about_update_url' => 'https://support.apple.com/en-us/122716'],
+                ['major_operating_system_id' => $major_id, 'version' => '15.6', 'release_date' => '2025-07-29', 'about_update_url' => 'https://support.apple.com/en-us/124149'],
+                ['major_operating_system_id' => $major_id, 'version' => '15.6.1', 'release_date' => '2025-08-20', 'about_update_url' => 'https://support.apple.com/en-us/124927'],
             ],
             ['version'],
             ['release_date', 'major_operating_system_id', 'about_update_url']

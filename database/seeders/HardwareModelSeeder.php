@@ -111,7 +111,7 @@ class HardwareModelSeeder extends Seeder
             ['name' => 'Mac Pro (2023)', 'model_identifier' => '["Mac14,8"]', 'board_identifier' => '["J180dAP"]', 'max_major_operating_system' => NULL],
             ['name' => 'Mac Studio (2022)', 'model_identifier' => '["Mac13,1", "Mac13,2"]', 'board_identifier' => '["J375cAP", "J375dAP"]', 'max_major_operating_system' => NULL],
             ['name' => 'Mac Studio (2023)', 'model_identifier' => '["Mac14,13", "Mac14,14"]', 'board_identifier' => '["J475cAP", "J475dAP"]', 'max_major_operating_system' => NULL],
-            ['name' => 'Mac Studio (2025)', 'model_identifier' => '["Mac16,9"]', 'board_identifier' => '["J575cAP", "J575dAP"]', 'max_major_operating_system' => NULL],
+            ['name' => 'Mac Studio (2025)', 'model_identifier' => '["Mac15,14", "Mac16,9"]', 'board_identifier' => '["J575cAP", "J575dAP"]', 'max_major_operating_system' => NULL],
         ], ['name'], ['model_identifier', 'board_identifier', 'max_major_operating_system']);
     }
 }

@@ -105,6 +105,7 @@ class MinorOperatingSystemSeeder extends Seeder
                 ['major_operating_system_id' => $major_id, 'version' => '14.7.6', 'release_date' => '2025-05-12', 'about_update_url' => 'https://support.apple.com/en-us/122717'],
                 ['major_operating_system_id' => $major_id, 'version' => '14.7.7', 'release_date' => '2025-07-29', 'about_update_url' => 'https://support.apple.com/en-us/124150'],
                 ['major_operating_system_id' => $major_id, 'version' => '14.7.8', 'release_date' => '2025-08-20', 'about_update_url' => 'https://support.apple.com/en-us/124928'],
+                ['major_operating_system_id' => $major_id, 'version' => '14.8', 'release_date' => '2025-09-15', 'about_update_url' => 'https://support.apple.com/en-us/125112'],
             ],
             ['version'],
             ['release_date', 'major_operating_system_id', 'about_update_url']
@@ -127,6 +128,17 @@ class MinorOperatingSystemSeeder extends Seeder
                 ['major_operating_system_id' => $major_id, 'version' => '15.5', 'release_date' => '2025-05-12', 'about_update_url' => 'https://support.apple.com/en-us/122716'],
                 ['major_operating_system_id' => $major_id, 'version' => '15.6', 'release_date' => '2025-07-29', 'about_update_url' => 'https://support.apple.com/en-us/124149'],
                 ['major_operating_system_id' => $major_id, 'version' => '15.6.1', 'release_date' => '2025-08-20', 'about_update_url' => 'https://support.apple.com/en-us/124927'],
+                ['major_operating_system_id' => $major_id, 'version' => '15.7', 'release_date' => '2025-09-15', 'about_update_url' => 'https://support.apple.com/en-us/125111'],
+            ],
+            ['version'],
+            ['release_date', 'major_operating_system_id', 'about_update_url']
+        );
+
+        $major_id = DB::table('major_operating_systems')->where('version', '26')->value('id');
+
+        DB::table('minor_operating_systems')->upsert(
+            [
+                ['major_operating_system_id' => $major_id, 'version' => '26.0', 'release_date' => '2025-09-15', 'about_update_url' => 'https://support.apple.com/en-us/125110'],
             ],
             ['version'],
             ['release_date', 'major_operating_system_id', 'about_update_url']

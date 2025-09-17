@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.4] - 2025-09-17
+
+### Added
+
+- Second model identifier for Mac Studio (2025)
+- Added major version 26
+- Added update info for recent macOS  minor versions 14, 15 and 26
+
+
 ## [0.3.3] - 2025-09-05
 
 ### Fixed

@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.5] - 2026-01-29
+
+### Added
+
+- Added hardware model MacBook Pro (14-inch, M5, Oct 2025)
+- Added update info for recent macOS minor versions 14, 15 and 26
+
+
 ## [0.3.4] - 2025-09-17
 
 ### Added

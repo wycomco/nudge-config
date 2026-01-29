@@ -100,6 +100,7 @@ class HardwareModelSeeder extends Seeder
             ['name' => 'MacBook Pro (16-inch, Nov 2023)', 'model_identifier' => '["Mac15,7", "Mac15,9", "Mac15,11"]', 'board_identifier' => '["J516sAP", "J516cAP", "J516mAP"]', 'max_major_operating_system' => NULL],
             ['name' => 'MacBook Pro (14-inch, Nov 2024)', 'model_identifier' => '["Mac16,1", "Mac16,6", "Mac16,8"]', 'board_identifier' => '["J604AP", "J614cAP", "J614sAP"]', 'max_major_operating_system' => NULL],
             ['name' => 'MacBook Pro (16-inch, Nov 2024)', 'model_identifier' => '["Mac16,5", "Mac16,7"]', 'board_identifier' => '["J616cAP", "J616sAP"]', 'max_major_operating_system' => NULL],
+            ['name' => 'MacBook Pro (14-inch, M5, Oct 2025)', 'model_identifier' => '["Mac17,2"]', 'board_identifier' => '["J704AP"]', 'max_major_operating_system' => NULL],
             ['name' => 'Mac mini (Late 2014)', 'model_identifier' => '["Macmini7,1"]', 'board_identifier' => '["Mac-35C5E08120C7EEAF"]', 'max_major_operating_system' => $major_versions['12']],
             ['name' => 'Mac mini (Late 2018)', 'model_identifier' => '["Macmini8,1"]', 'board_identifier' => '["Mac-7BA5B2DFE22DDD8C"]', 'max_major_operating_system' => $major_versions['15']],
             ['name' => 'Mac mini (M1, 2020)', 'model_identifier' => '["Macmini9,1"]', 'board_identifier' => '["J274AP"]', 'max_major_operating_system' => NULL],
